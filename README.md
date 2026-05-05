@@ -31,7 +31,8 @@ As this KB (Knowledge Base) grows, we use a structured approach to separate envi
 3.Commit & Push: Once pushed, the GitOps controller will automatically synchronize the state with the live environment.
 
 ### 📝 To-Do / Roadmap
-[ ] Setup initial folder hierarchy.
-[ ] Integrate with ArgoCD or Flux.
-[ ] Add the first "Hello World" project deployment.
-[ ] Configure Secret management (SealedSecrets or Vault).
+[ ] Setup initial folder hierarchy.  
+[ ] Integrate with ArgoCD or Flux.  
+[ ] Add the first "Hello World" project deployment.  
+[ ] Configure Secret management (SealedSecrets or Vault).  
+
