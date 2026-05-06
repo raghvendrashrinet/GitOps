@@ -176,5 +176,6 @@ Expected Output (Truncated):
 - argocd-repo-server-xxxxxxxx-67890 (Replica 2)
 - argocd-redis-ha-haproxy-xxxxxx (The load balancer for Redis)
 - argocd-redis-ha-server-0, 1, 2 (The actual Redis cluster)
+  
 ⚠️ Important Requirement for HA
 For HA to actually provide "High Availability," your Kubernetes cluster must have at least 3 worker nodes. If you deploy the HA configuration on a single-node cluster (like Minikube or a small test VM), all 13+ pods will be crammed onto one machine. If that machine restarts, all replicas go down at once, defeating the purpose of HA.
