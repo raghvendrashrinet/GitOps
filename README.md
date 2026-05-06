@@ -8,18 +8,18 @@ GitOps is an operational framework that takes DevOps best practices—like versi
 As this KB (Knowledge Base) grows, we use a structured approach to separate environmental configurations from application logic.
 ```
 .
-├── apps/                   # Application-specific manifests
-│   ├── project-a/          # Deployment files for Project A
-│   │   ├── base/           # Common resources
-│   │   └── overlays/       # Environment-specific tweaks (Dev/Prod)
-│   └── project-b/          # Deployment files for Project B
-├── clusters/               # Cluster-level configurations
-│   ├── production/         # Production cluster add-ons (Ingress, Monitoring)
-│   └── staging/            # Staging cluster configuration
-├── infrastructure/         # Shared infra components
-│   ├── databases/          # Cross-project DB configs
-│   └── networking/         # Global network policies
-└── README.md               # You are here!
+├── argocd/                 # ArgoCD-specific implementation
+│   ├── system/             # ArgoCD installation (Helm/Manifests)
+│   ├── apps/               # AppProject & Application CRDs
+│   └── clusters/           # Multi-cluster secret configs
+├── fluxcd/                 # FluxCD-specific implementation
+│   ├── clusters/           # Flux bootstrap configurations
+│   ├── infrastructure/     # Sources, Buckets, HelmRepos
+│   └── apps/               # Kustomizations & HelmReleases
+├── shared/                 # Common resources used by both
+│   ├── base-apps/          # Raw K8s manifests (Tool-agnostic)
+│   └── scripts/            # Setup and migration scripts
+└── README.md
 ```
 
 ### 🛠 Getting Started
