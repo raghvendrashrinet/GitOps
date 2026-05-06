@@ -9,14 +9,12 @@ As this KB (Knowledge Base) grows, we use a structured approach to separate envi
 ```
 .
 ├── argocd/                 # ArgoCD-specific implementation
-│   ├── system/             # ArgoCD installation (Helm/Manifests)
-│   ├── apps/               # AppProject & Application CRDs
-│   └── clusters/           # Multi-cluster secret configs
 ├── fluxcd/                 # FluxCD-specific implementation
-│   ├── clusters/           # Flux bootstrap configurations
-│   ├── infrastructure/     # Sources, Buckets, HelmRepos
-│   └── apps/               # Kustomizations & HelmReleases
-├── shared/                 # Common resources used by both
+├── other-tools/            # Non-controller based GitOps/CD tools
+│   ├── jenkins/            # Groovy Pipelines & JCasC configs
+│   ├── spinnaker/          # Halyard configs & Pipeline JSONs
+│   └── crossplane/         # Control plane for infrastructure
+├── shared/                 # Common resources used by all tools
 │   ├── base-apps/          # Raw K8s manifests (Tool-agnostic)
 │   └── scripts/            # Setup and migration scripts
 └── README.md
