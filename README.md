@@ -3,7 +3,14 @@ GitOps is an operational framework that takes DevOps best practices—like versi
 - Declarative: The entire system state is described in files.
 - Versioned & Immutable: The desired state is stored in Git, providing a full audit trail and easy rollbacks.
 - Pulled Automatically: Software agents (like ArgoCD or Flux) pull the configuration from Git and apply it to the cluster, ensuring no "configuration drift."
-
+## The Single Source of Truth (SSoT)
+The SSoT is the "shared" directory in this repository. It is the definitive representation of what should be running in our cluster.
+- The Golden Rule: If it isn't in Git, it doesn't exist. If it's different in the cluster than it is in Git, the cluster is "wrong."
+### Why SSoT Matters:
+- Drift Detection: If someone manually edits a service in the cluster using kubectl edit, the GitOps controller (Argo/Flux) sees the deviation from the SSoT and automatically reverts it.
+- Disaster Recovery: If a cluster is deleted, you can point your GitOps tool at the shared/ folder, and the entire environment is recreated in minutes.
+- Auditability: Every change to the infrastructure has a commit hash, a timestamp, and an author.
+  
 ### 📂 Directory Structure
 As this KB (Knowledge Base) grows, we use a structured approach to separate environmental configurations from application logic.
 ```
